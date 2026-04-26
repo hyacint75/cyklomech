@@ -47,7 +47,6 @@ $username = current_username();
                 <?php if (!$isLogged): ?>
                     <a href="<?php echo $basePath; ?>fotogalerie.php" class="rounded-lg border border-slate-200 bg-white px-3 py-2 <?php echo $activePage === 'gallery' ? 'border-amber-200 bg-amber-50 text-amber-900' : 'hover:bg-slate-50'; ?>">Fotogalerie</a>
                 <?php endif; ?>
-                <a href="<?php echo $basePath; ?>servis.php" class="rounded-lg border border-slate-200 bg-white px-3 py-2 <?php echo $activePage === 'service' ? 'border-amber-200 bg-amber-50 text-amber-900' : 'hover:bg-slate-50'; ?>">Rezervace servisu</a>
                 <?php if (!$isLogged): ?>
                     <a href="<?php echo $basePath; ?>oteviraci-doba.php" class="rounded-lg border border-slate-200 bg-white px-3 py-2 <?php echo $activePage === 'hours' ? 'border-amber-200 bg-amber-50 text-amber-900' : 'hover:bg-slate-50'; ?>">Otevírací doba</a>
                 <?php endif; ?>
@@ -55,6 +54,7 @@ $username = current_username();
                     <a href="<?php echo $basePath; ?>admin.php" class="rounded-lg border border-slate-200 bg-white px-3 py-2 <?php echo $activePage === 'admin' ? 'border-amber-200 bg-amber-50 text-amber-900' : 'hover:bg-slate-50'; ?>">Administrace</a>
                     <a href="<?php echo $basePath; ?>service_admin.php" class="rounded-lg border border-slate-200 bg-white px-3 py-2 <?php echo $activePage === 'service_admin' ? 'border-amber-200 bg-amber-50 text-amber-900' : 'hover:bg-slate-50'; ?>">Admin servisu</a>
                     <a href="<?php echo $basePath; ?>service_work.php" class="rounded-lg border border-slate-200 bg-white px-3 py-2 <?php echo $activePage === 'service_work' ? 'border-amber-200 bg-amber-50 text-amber-900' : 'hover:bg-slate-50'; ?>">Servisní práce</a>
+                    <a href="<?php echo $basePath; ?>customer_cards.php" class="rounded-lg border border-slate-200 bg-white px-3 py-2 <?php echo $activePage === 'customer_cards' ? 'border-amber-200 bg-amber-50 text-amber-900' : 'hover:bg-slate-50'; ?>">Zákaznické karty</a>
                     <a href="<?php echo $basePath; ?>users.php" class="rounded-lg border border-slate-200 bg-white px-3 py-2 <?php echo $activePage === 'users' ? 'border-amber-200 bg-amber-50 text-amber-900' : 'hover:bg-slate-50'; ?>">Uživatelé</a>
                     <a href="<?php echo $basePath; ?>auditlog.php" class="rounded-lg border border-slate-200 bg-white px-3 py-2 <?php echo $activePage === 'audit' ? 'border-amber-200 bg-amber-50 text-amber-900' : 'hover:bg-slate-50'; ?>">Audit log</a>
                 <?php endif; ?>

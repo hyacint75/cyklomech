@@ -1,30 +1,31 @@
 <main class="mx-auto max-w-[1680px] space-y-10 px-6 py-10">
-    <section class="relative overflow-hidden rounded-2xl px-6 py-7 text-white md:py-8">
+    <section class="relative overflow-hidden rounded-2xl px-6 py-5 text-white md:py-6">
         <div class="absolute inset-0 bg-slate-950/45"></div>
         <div class="absolute inset-0 bg-forest-gradient opacity-95"></div>
-        <div class="absolute -right-16 -top-12 h-56 w-56 rounded-full bg-amber-300/20 blur-2xl"></div>
-        <div class="relative grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+        <div class="absolute -right-16 -top-12 h-40 w-40 rounded-full bg-amber-300/20 blur-2xl"></div>
+        <div class="relative grid gap-5 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
             <div>
                 <p class="text-limepop text-sm uppercase tracking-widest"><?php echo APP_NAME; ?></p>
-                <h1 class="mt-3 font-display text-4xl font-black md:text-5xl">Kde končí silnice, my nekončíme.</h1>
-                <p class="mt-4 max-w-2xl text-slate-100">Servis, testovací jízdy a odborné poradenství. Osobní přístup a možnost rezervace přes telefon.</p>
-                <div class="mt-8 flex flex-wrap gap-3 text-sm">
+                <h1 class="mt-2 font-display text-3xl font-black md:text-4xl">Kde končí silnice, my nekončíme. </h1>
+                <p class="mt-1 text-xl font-black">Věříme, že každá cesta může pokračovat. Stačí správné kolo, dobrý servis a chuť objevovat nové trasy.</p>
+                <p class="mt-3 max-w-2xl text-sm text-slate-100">Servis, testovací jízdy a odborné poradenství. Osobní přístup a možnost rezervace přes telefon.</p>
+                <div class="mt-5 flex flex-wrap gap-3 text-sm">
                     <span class="rounded-full bg-white/15 px-4 py-2">Tel: +420 723 186 464</span>
                 </div>
             </div>
-            <aside class="rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-sm md:p-6">
+            <aside class="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm md:p-5">
                 <p class="text-sm font-bold uppercase tracking-[0.28em] text-white/70">Aktuální informace</p>
-                <div class="mt-5 space-y-4 text-white">
+                <div class="mt-4 space-y-3 text-white">
                     <div>
                         <p class="text-xs font-semibold uppercase tracking-[0.22em] text-white/60">Pracovní doba</p>
-                        <p class="mt-2 text-2xl font-black">Po-Pá 9:00-12:00 / 14:00-17:00</p>
+                        <p class="mt-1 text-xl font-black">Po-Pá 9:00-12:00 / 14:00-17:00</p>
                         <p class="mt-1 text-sm text-white/80">Sobota a neděle po dohodě nebo zavřeno.</p>
                     </div>
                     <div>
                         <p class="text-xs font-semibold uppercase tracking-[0.22em] text-white/60">Telefon</p>
-                        <p class="mt-2 text-2xl font-black">723 186 464</p>
+                        <p class="mt-1 text-xl font-black">723 186 464</p>
                     </div>
-                    <div class="rounded-2xl border border-white/15 bg-white/10 p-4">
+                    <div class="rounded-2xl border border-white/15 bg-white/10 p-3">
                         <p class="text-sm font-semibold">Web slouží jako katalog dostupných kol.</p>
                         <p class="mt-2 text-sm text-white/80">
                             Pro finální výběr, zkušební jízdu a převzetí kola počítáme s osobní návštěvou prodejny.

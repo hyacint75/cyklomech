@@ -33,9 +33,9 @@ function build_service_page_data(mysqli $mysqli, ?string &$dbError): array
         $action = (string) ($_POST['action'] ?? '');
 
         if ($action === 'service_access_login') {
-            $serialNumber = (string) ($_POST['serial_number'] ?? '');
-            if (!service_booking_serial_exists($mysqli, $serialNumber)) {
-                $accessErrors[] = 'Zadane vyrobni cislo kola nebylo nalezeno v databazi.';
+            $accessKey = (string) ($_POST['access_key'] ?? $_POST['serial_number'] ?? '');
+            if (!service_booking_access_key_exists($mysqli, $accessKey)) {
+                $accessErrors[] = 'Zadané výrobní číslo, kód zákaznické karty nebo jméno nebylo nalezeno.';
             } else {
                 service_booking_grant_access();
                 service_redirect_with_status('access_granted');

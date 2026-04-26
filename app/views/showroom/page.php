@@ -155,15 +155,12 @@ $featuredCategories = array_slice($categories, 0, 6);
             <div class="px-7 py-6 md:px-10 md:py-7">
                 <p class="showroom-kicker">Katalog prodejny</p>
                 <h1 class="mt-3 w-full font-display text-4xl font-black uppercase tracking-tight text-[#7a5b0f] md:text-5xl">
-                    Kola, elektrokola a servis v přímém, přehledném stylu.
+                    Kola, elektrokola v přímém, přehledném stylu.
                 </h1>
-                <p class="mt-5 max-w-2xl text-base leading-7 text-slate-700">
-                    Stránka je inspirovaná strukturou webu cykloflos.cz: důležité provozní informace jsou hned nahoře, nabídka je čitelná
-                    a vše směřuje k návštěvě prodejny nebo telefonu.
-                </p>
+                <p class="mt-5 max-w-2xl text-base leading-7 text-slate-700"></p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#nabidka" class="showroom-button">Zobrazit nabídku</a>
-                    <a href="servis.php" class="showroom-button showroom-button-secondary">Objednat servis</a>
+                    <!--<a href="servis.php" class="showroom-button showroom-button-secondary">Objednat servis</a>-->
                 </div>
             </div>
         </div>

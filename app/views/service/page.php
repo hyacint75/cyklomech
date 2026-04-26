@@ -5,7 +5,7 @@
         <div class="relative">
             <p class="text-limepop text-sm uppercase tracking-widest">Servis</p>
             <h1 class="mt-3 font-display text-4xl font-black">Rezervace servisu kola</h1>
-            <p class="mt-4 max-w-2xl text-slate-100">Přístup do formuláře je chráněný ověřením výrobního čísla kola. Po přihlášení může zákazník odeslat požadovaný termín a popis servisu.</p>
+            <p class="mt-4 max-w-2xl text-slate-100">Přístup do formuláře je chráněný ověřením výrobního čísla kola, kódu zákaznické karty nebo jména zákazníka.</p>
         </div>
     </section>
 
@@ -20,7 +20,7 @@
     <section class="grid gap-6 lg:grid-cols-[0.95fr,1.05fr]">
         <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
             <h2 class="font-display text-2xl font-bold text-forest">Přístup do systému</h2>
-            <p class="mt-2 text-sm text-slate-600">Pro vstup do formuláře zadejte výrobní číslo kola. Přístup bude povolen jen pro čísla uložená v administraci.</p>
+            <p class="mt-2 text-sm text-slate-600">Pro vstup do formuláře zadejte výrobní číslo kola, kód zákaznické karty nebo jméno zákazníka.</p>
 
             <?php if (count($accessErrors) > 0): ?>
                 <div class="mt-4 rounded-xl border border-red-300 bg-red-50 p-4 text-sm text-red-900">
@@ -36,10 +36,10 @@
                 <form method="post" class="mt-5 space-y-4">
                     <input type="hidden" name="action" value="service_access_login">
                     <div>
-                        <label for="serial_number" class="mb-1 block text-sm font-medium text-slate-700">Výrobní číslo kola</label>
-                        <input id="serial_number" name="serial_number" type="text" class="w-full rounded-lg border border-slate-300 px-3 py-2" autocomplete="off">
+                        <label for="access_key" class="mb-1 block text-sm font-medium text-slate-700">Výrobní číslo / kód karty / jméno</label>
+                        <input id="access_key" name="access_key" type="text" class="w-full rounded-lg border border-slate-300 px-3 py-2" autocomplete="off">
                     </div>
-                    <button type="submit" class="btn-gradient rounded-lg px-4 py-2 text-sm font-semibold">Ověřit výrobní číslo</button>
+                    <button type="submit" class="btn-gradient rounded-lg px-4 py-2 text-sm font-semibold">Ověřit přístup</button>
                 </form>
             <?php else: ?>
                 <div class="mt-5 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-900">
@@ -67,7 +67,7 @@
 
             <?php if (!$isUnlocked): ?>
                 <div class="mt-5 rounded-xl border border-dashed border-slate-300 bg-slate-50 p-6 text-sm text-slate-600">
-                    Nejprve zadejte platné výrobní číslo kola.
+                    Nejprve zadejte platné výrobní číslo, kód zákaznické karty nebo jméno.
                 </div>
             <?php else: ?>
                 <?php if (count($reservationErrors) > 0): ?>

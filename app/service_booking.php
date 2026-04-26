@@ -265,6 +265,57 @@ function service_booking_serial_exists(mysqli $mysqli, string $serialNumber): bo
     return $exists;
 }
 
+function service_booking_customer_card_matches(mysqli $mysqli, string $accessKey): bool
+{
+    $accessKey = trim($accessKey);
+    if ($accessKey === '') {
+        return false;
+    }
+
+    $normalizedAccessKey = service_booking_normalize_serial($accessKey);
+
+    try {
+        $result = $mysqli->query('SELECT card_code, customer_name, serial_number FROM customer_cards');
+    } catch (Throwable $exception) {
+        return false;
+    }
+
+    if (!$result) {
+        return false;
+    }
+
+    while ($row = $result->fetch_assoc()) {
+        $cardCode = trim((string) ($row['card_code'] ?? ''));
+        $customerName = trim((string) ($row['customer_name'] ?? ''));
+        $serialNumber = trim((string) ($row['serial_number'] ?? ''));
+
+        if ($customerName !== '' && mb_strtolower($customerName, 'UTF-8') === mb_strtolower($accessKey, 'UTF-8')) {
+            $result->free();
+            return true;
+        }
+
+        if ($cardCode !== '' && service_booking_normalize_serial($cardCode) === $normalizedAccessKey) {
+            $result->free();
+            return true;
+        }
+
+        if ($serialNumber !== '' && service_booking_normalize_serial($serialNumber) === $normalizedAccessKey) {
+            $result->free();
+            return true;
+        }
+    }
+
+    $result->free();
+
+    return false;
+}
+
+function service_booking_access_key_exists(mysqli $mysqli, string $accessKey): bool
+{
+    return service_booking_serial_exists($mysqli, $accessKey)
+        || service_booking_customer_card_matches($mysqli, $accessKey);
+}
+
 function fetch_service_bike_serials(mysqli $mysqli): array
 {
     ensure_service_bike_serials_table($mysqli);

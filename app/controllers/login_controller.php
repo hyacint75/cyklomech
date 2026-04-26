@@ -1,5 +1,36 @@
 <?php
 
+function ensure_login_users_table(mysqli $mysqli): bool
+{
+    try {
+        if (!$mysqli->query(
+            'CREATE TABLE IF NOT EXISTS users (
+                id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                username VARCHAR(80) NOT NULL UNIQUE,
+                password_hash VARCHAR(255) NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )'
+        )) {
+            return false;
+        }
+
+        $defaultAdminHash = '$2y$10$.ajE8Ahowkn0PFl6nL2iIeujCtlBE5/dJv1fgW3rpM3Hsc5LzHKAC';
+        $stmt = $mysqli->prepare('INSERT INTO users (username, password_hash) VALUES (?, ?) ON DUPLICATE KEY UPDATE username = username');
+        if (!$stmt) {
+            return false;
+        }
+
+        $defaultAdminUsername = 'admin';
+        $stmt->bind_param('ss', $defaultAdminUsername, $defaultAdminHash);
+        $ok = $stmt->execute();
+        $stmt->close();
+
+        return $ok;
+    } catch (Throwable $exception) {
+        return false;
+    }
+}
+
 function build_login_page_data(mysqli $mysqli, ?string $dbError): array
 {
     if (is_logged_in()) {
@@ -22,6 +53,14 @@ function build_login_page_data(mysqli $mysqli, ?string $dbError): array
     ];
 
     if ($dbError !== null || $_SERVER['REQUEST_METHOD'] !== 'POST') {
+        if ($dbError === null) {
+            ensure_login_users_table($mysqli);
+        }
+        return $data;
+    }
+
+    if (!ensure_login_users_table($mysqli)) {
+        $data['error'] = 'Nepodařilo se připravit uživatelskou tabulku pro přihlášení.';
         return $data;
     }
 
