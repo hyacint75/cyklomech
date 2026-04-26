@@ -1,0 +1,4 @@
+﻿USE cyklo;
+
+ALTER TABLE bikes
+    ADD COLUMN IF NOT EXISTS image_url VARCHAR(255) DEFAULT NULL AFTER description;

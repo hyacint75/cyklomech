@@ -1,0 +1,13 @@
+﻿USE cyklo;
+
+CREATE TABLE IF NOT EXISTS site_notice (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    message TEXT NOT NULL,
+    is_active TINYINT(1) NOT NULL DEFAULT 0,
+    updated_by VARCHAR(80) DEFAULT NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+INSERT INTO site_notice (id, message, is_active, updated_by)
+VALUES (1, '', 0, NULL)
+ON DUPLICATE KEY UPDATE id = VALUES(id);

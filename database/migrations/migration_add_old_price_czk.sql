@@ -1,0 +1,2 @@
+ALTER TABLE bikes
+    ADD COLUMN IF NOT EXISTS old_price_czk DECIMAL(10,2) DEFAULT NULL AFTER price_czk;
