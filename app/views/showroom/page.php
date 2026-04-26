@@ -151,10 +151,10 @@ $featuredCategories = array_slice($categories, 0, 6);
 
 <main class="mx-auto max-w-[1680px] px-6 py-10">
     <section class="showroom-hero overflow-hidden rounded-[2rem] border border-[#ead9a2] bg-white shadow-[0_24px_60px_rgba(122,91,15,0.08)]">
-        <div class="grid gap-0 lg:grid-cols-[1.2fr_0.8fr]">
-            <div class="px-7 py-8 md:px-10 md:py-10">
+        <div>
+            <div class="px-7 py-6 md:px-10 md:py-7">
                 <p class="showroom-kicker">Katalog prodejny</p>
-                <h1 class="mt-3 max-w-3xl font-display text-4xl font-black uppercase tracking-tight text-[#7a5b0f] md:text-5xl">
+                <h1 class="mt-3 w-full font-display text-4xl font-black uppercase tracking-tight text-[#7a5b0f] md:text-5xl">
                     Kola, elektrokola a servis v přímém, přehledném stylu.
                 </h1>
                 <p class="mt-5 max-w-2xl text-base leading-7 text-slate-700">
@@ -164,27 +164,6 @@ $featuredCategories = array_slice($categories, 0, 6);
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#nabidka" class="showroom-button">Zobrazit nabídku</a>
                     <a href="servis.php" class="showroom-button showroom-button-secondary">Objednat servis</a>
-                </div>
-            </div>
-            <div class="showroom-panel px-7 py-8 md:px-10 md:py-10">
-                <p class="text-sm font-bold uppercase tracking-[0.28em] text-white/70">Aktuální informace</p>
-                <div class="mt-5 space-y-4 text-white">
-                    <div>
-                        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-white/60">Pracovní doba</p>
-                        <p class="mt-2 text-2xl font-black">Po-Pá 9:00-12:00 / 14:00-17:00</p>
-                        <p class="mt-1 text-sm text-white/80">Sobota a neděle po dohodě nebo zavřeno.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-white/60">Telefon</p>
-                        <p class="mt-2 text-2xl font-black">723 186 464</p>
-                    </div>
-                    <div class="rounded-2xl border border-white/15 bg-white/10 p-4">
-                        <p class="text-sm font-semibold">Web slouží jako katalog dostupných kol.</p>
-                        <p class="mt-2 text-sm text-white/80">
-                            Pro finální výběr, zkušební jízdu a převzetí kola počítáme s osobní návštěvou prodejny.
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -272,13 +251,14 @@ $featuredCategories = array_slice($categories, 0, 6);
                 <aside class="h-fit rounded-[1.75rem] border border-[#ead9a2] bg-[#fffbf1] p-6 shadow-sm xl:sticky xl:top-6">
                     <div>
                         <div class="flex items-start justify-between gap-3">
-                        <div>
-                            <p class="showroom-section-title">Filtry nabídky</p>
-                            <p class="mt-2 text-sm leading-6 text-slate-600">Můžete kombinovat více velikostí kol i druhů kol najednou.</p>
+                            <div>
+                                <p class="showroom-section-title">Filtry nabídky</p>
+                                <p class="mt-2 text-sm leading-6 text-slate-600">Můžete kombinovat více velikostí kol i druhů kol najednou.</p>
+                            </div>
+                            <?php if ($selectedWheelSizes !== [] || $selectedBikeTypes !== [] || $selectedCategories !== []): ?>
+                                <a href="prodejna.php#nabidka" class="text-sm font-semibold text-[#7a5b0f] underline decoration-[#d4af37] underline-offset-4">Vymazat</a>
+                            <?php endif; ?>
                         </div>
-                        <?php if ($selectedWheelSizes !== [] || $selectedBikeTypes !== [] || $selectedCategories !== []): ?>
-                            <a href="prodejna.php#nabidka" class="text-sm font-semibold text-[#7a5b0f] underline decoration-[#d4af37] underline-offset-4">Vymazat</a>
-                        <?php endif; ?>
                     </div>
 
                     <div class="mt-6">
