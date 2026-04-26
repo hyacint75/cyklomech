@@ -200,7 +200,7 @@ $featuredCategories = array_slice($categories, 0, 6);
                                     <img
                                         src="<?php echo e((string) $bike['image_url']); ?>"
                                         alt="<?php echo e((string) $bike['name']); ?>"
-                                        class="h-[370px] w-full object-contain bg-white p-4 md:h-[470px] md:p-6"
+                                        class="h-[500px] w-full object-contain bg-white p-2 md:h-[620px] md:p-3"
                                     >
                                 <?php else: ?>
                                     <div class="flex min-h-[220px] items-center justify-center px-6 text-center text-sm text-slate-400">Obrázek bude doplněn.</div>
