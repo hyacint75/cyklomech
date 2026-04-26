@@ -1,7 +1,6 @@
 <?php
 require __DIR__ . '/app/bootstrap.php';
 
-
 require APP_ROOT . '/app/auth.php';
 require_login('admin.php');
 require APP_ROOT . '/app/db.php';
